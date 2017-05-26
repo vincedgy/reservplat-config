@@ -6,6 +6,10 @@ security.oauth2.resource.userInfoUri: http://localhost:9191/uaa/user
 
 hystrix.command.default.execution.isolation.strategy: SEMAPHORE
 
+eureka:
+  instance:
+    metadata-map:
+      management.port: ${management.port:8081}
 #
 # security.oauth2.client.client-secret=36f1653c889f3cc466519aa873188c33adfd53d4
 # security.oauth2.client.client-id=644c5dd8451bad01a627
