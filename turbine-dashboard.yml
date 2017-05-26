@@ -9,5 +9,5 @@ spring:
 turbine:
   aggregator:
     clusterConfig: RESERVATION
-  appConfig: reservation-service,reservation-client
+  appConfig: reservation-client, reservation-service, turbine-dashboard, hystrix-dashboard, eureka-example, zipkin-service
   clusterNameExpression: "'default'"
