@@ -3,15 +3,8 @@
 info:
   component: Turbine
 
-PREFIX:
-
-endpoints:
-  restart:
-    enabled: true
-  shutdown:
-    enabled: true
-
-server.port: 8989
+server
+  port: 8989
 
 management:
   port: 8990
@@ -21,5 +14,5 @@ spring:
     name: turbine-dashboard
 
 turbine:
-  appConfig: reservation-client, reservation-service, turbine-dashboard, hystrix-dashboard, eureka-example, zipkin-service
+  appConfig: reservation-client, reservation-service
   clusterNameExpression: "'default'"
