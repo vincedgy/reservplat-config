@@ -8,6 +8,6 @@ spring:
 
 turbine:
   aggregator:
-    clusterConfig: RESERVATION
+    clusterConfig: RESERVATION_agg
   appConfig: reservation-client, reservation-service, turbine-dashboard, hystrix-dashboard, eureka-example, zipkin-service
   clusterNameExpression: "'default'"
