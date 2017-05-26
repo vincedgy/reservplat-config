@@ -5,3 +5,9 @@ server.port: 8089
 spring:
   application:
     name: turbine-dashboard
+
+turbine:
+  aggregator:
+    clusterConfig: RESERVATION
+  appConfig: reservation-service,reservation-client
+  clusterNameExpression: "'default'"
