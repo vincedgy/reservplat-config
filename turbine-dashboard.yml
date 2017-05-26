@@ -6,9 +6,6 @@ info:
 server:
   port: 8989
 
-management:
-  port: 8990
-
 spring:
   application:
     name: turbine-dashboard
