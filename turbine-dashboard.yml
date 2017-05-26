@@ -1,5 +1,42 @@
 ##spring.cloud.config.uri: http://localhost:8888
-server.port: 8089
+
+server:
+  port: 8089
+
+management:
+  port: 8989
+
+info:
+  component: Turbine
+
+PREFIX:
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+
+logging:
+  level:
+    root: INFO
+    com.netflix.discovery: 'INFO'
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    non-secure-port: ${PORT:8989}
+  client:
+    serviceUrl:
+      defaultZone: ${vcap.services.${PREFIX:}eureka.credentials.uri:http://user:password@localhost:8761}/eureka/
+
+---
+spring:
+  profiles: cloud
+
+management:
+  security.enabled: false  #<2>
+  port: -1
 
 spring:
   application:
@@ -7,8 +44,6 @@ spring:
   cloud:
     config:
       enabled: true
-
-management.security.enabled: false  #<2>
 
 turbine:
   aggregator:
